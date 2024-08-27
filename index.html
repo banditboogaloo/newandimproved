@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spinning Marquee</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .marquee-container {
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    animation: spin 10s linear infinite;
+  }
+
+  .marquee {
+    display: inline-block;
+    padding-right: 100%;
+    animation: marquee-slide 20s linear infinite; /* doubled duration to make it go back */
+  }
+
+  @keyframes marquee-slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200%); } /* adjusted to move double the distance */
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+<div class="marquee-container">
+  <div class="marquee">
+    <h4>WELCOME TO THE WORLD OF FLOATING PLASTIC DEBRIS</h4>
+  </div>
+</div>
+</body>
+</html>
